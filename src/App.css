@@ -1,0 +1,100 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://cdn.pixabay.com/photo/2024/02/18/14/34/ai-generated-8581405_1280.jpg");
+  }
+  
+  .lin{
+    background-color: #007bff;
+    color: #eee;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  h2 {
+    color:white;
+    text-align: center;
+    margin-bottom: 20px; 
+  }
+  form {
+    width: 70%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  nav{
+    display: flex;
+    gap: 20px;
+  }
+  .links{
+    text-align: center;
+  }
+  .lin:hover{
+    background-color: #0056b3;
+    transition-duration: 5ms;
+  }
+  input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 480px) {
+    form {
+      padding: 20px;
+    }
+  }
+  
+  
