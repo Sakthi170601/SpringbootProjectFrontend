@@ -72,7 +72,7 @@ const AdminSignupPage = () => {
     setLoading(true); // Show loader
     try {
       const response = await axios.post(
-        "http://192.168.188.251:8080/admin",
+        "http://192.168.0.153:8080/admin",
         formData,
         {
           headers: {
@@ -98,7 +98,7 @@ const AdminSignupPage = () => {
     if (fetchData) {
       console.log("Fetching admin data...");
       axios
-        .get("http://192.168.188.251:8080/admin/findAllAdmin", {
+        .get("http://192.168.0.153:8080/admin/findAllAdmin", {
           validateStatus: (status) => status < 500, // Allow handling of 302 status
         })
         .then((response) => {

@@ -1,3 +1,4 @@
+// export default LoginPage;
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +10,6 @@ const LoginPage = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -42,32 +42,22 @@ const LoginPage = () => {
 
     try {
       const response = await axios.get(
-        `http://192.168.188.251:8080/user/login`,
+        `http://192.168.0.153:8080/user/userLogin?userEmail=${formData.userEmail}&userPassword=${formData.userPassword}`,
         {
-          params: {
-            userEmail: formData.userEmail,
-            userPassword: formData.userPassword,
-          },
           headers: {
             "Content-Type": "application/json",
           },
-          validateStatus: (status) => status < 500, // Allow handling of all non-server error statuses
         }
       );
 
-      if (response.status === 302) {
+      if (response.status === 200) {
         alert("Login successful!");
-        console.log("User Data:", response.data);
-        navigate("/booking"); // Correctly redirect using React Router
-      } else {
-        const errorMessage =
-          response.data?.message || "Login failed. Please try again.";
-        setError(errorMessage);
+        navigate("/booking"); // Redirect to a dashboard where options can be selected
       }
     } catch (error) {
       if (error.response) {
         setError(
-          error.response.data?.message || "Login failed. Please try again."
+          error.response.data.message || "Login failed. Please try again."
         );
       } else {
         setError("An error occurred. Please try again later.");
@@ -110,9 +100,7 @@ const LoginPage = () => {
           {loading ? "Please wait..." : "Login"}
         </button>
         <div>
-        New User  <a onClick={() => navigate("/signup")} style={{ margin: "10px" }}>
-        Admin Login
-      </a>
+          New User? <a onClick={() => navigate("/user/signup")} style={{ margin: "10px" }}>User Signup</a>
         </div>
       </form>
       {error && <div style={{ marginTop: "20px", color: "red" }}>{error}</div>}

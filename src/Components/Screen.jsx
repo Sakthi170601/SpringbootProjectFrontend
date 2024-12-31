@@ -24,7 +24,7 @@ const Screen = () => {
     setErrorMessage(null);
 
     try {
-      const response = await axios.post('http://192.168.188.251:8080/Screen', screenDetails, {
+      const response = await axios.post('http://localhost:8080/Screen', screenDetails, {
         headers: { 'Content-Type': 'application/json' },
       });
 

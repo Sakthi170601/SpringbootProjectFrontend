@@ -72,7 +72,7 @@ const SignupPage = () => {
     setLoading(true); // Show loader
     try {
       const response = await axios.post(
-        "http://192.168.188.251:8080/user",
+        "http://localhost:8080/user",
         formData,
         {
           headers: {

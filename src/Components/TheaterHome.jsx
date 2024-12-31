@@ -10,9 +10,9 @@ const TheaterHome = () => {
       <button onClick={() => navigate("/add-theaters")} style={{ margin: "10px" }}>
         Add Theater
       </button>
-      <button onClick={() => navigate("/screen")} style={{ margin: "10px" }}>
+      {/* <button onClick={() => navigate("/screen")} style={{ margin: "10px" }}>
         Add Screen
-      </button>
+      </button> */}
       <button onClick={() => navigate("/movie-show")} style={{ margin: "10px" }}>
         Add Show
       </button>
