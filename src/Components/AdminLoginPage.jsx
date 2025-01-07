@@ -41,7 +41,7 @@ const AdminLoginPage = () => {
 
     try {
       const response = await axios.get(
-        `http://192.168.0.153:8080/admin/adminLogin?adminEmail=${formData.adminEmail}&adminPassword=${formData.adminPassword}`,
+        `http://localhost:8080/admin/adminLogin?adminEmail=${formData.adminEmail}&adminPassword=${formData.adminPassword}`,
         {
           headers: {
             "Content-Type": "application/json",

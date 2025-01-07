@@ -72,7 +72,7 @@ const AdminSignupPage = () => {
     setLoading(true); // Show loader
     try {
       const response = await axios.post(
-        "http://192.168.0.153:8080/admin",
+        "http://localhost:8080/admin",
         formData,
         {
           headers: {
@@ -83,6 +83,7 @@ const AdminSignupPage = () => {
       alert("Signup successful!");
       console.log("Server Response:", response.data);
       setFetchData(true); // Trigger fetching data after successful submission
+      navigate("/admin/login");
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || "Signup failed. Please try again.";

@@ -83,6 +83,7 @@ const SignupPage = () => {
       alert("Signup successful!");
       console.log("Server Response:", response.data);
       setFetchData(true); // Trigger fetching data after successful submission
+      navigate("/login");
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || "Signup failed. Please try again.";
